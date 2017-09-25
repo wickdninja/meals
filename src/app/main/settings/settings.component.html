@@ -1,0 +1,9 @@
+<form #settingsForm="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    settings works!
+  </p>
+  <button md-raised-button color="primary">
+    <span *ngIf="!updating">Update</span>
+    <md-progress-spinner *ngIf="updating" [mode]="'indeterminate'"></md-progress-spinner>
+  </button>
+</form>

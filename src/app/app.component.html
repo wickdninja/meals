@@ -5,22 +5,21 @@
 </md-toolbar>
 <md-sidenav-container id="main-container" fxLayout="column" fxFlexFill fxLayoutAlign="start stretch">
   <md-sidenav mode="side" opened="false" #sidenav>
-    <md-list>
+    <md-list (click)="sidenav.toggle()">
       <h3 md-subheader>Meals</h3>
       <md-list-item routerLink="/meals">
         <md-icon md-list-icon>restaurant</md-icon>
         <h4 md-line>Meals</h4>
-        <p md-line> Something about meals</p>
+        <p md-line>Create new meals and manage existing meals.</p>
       </md-list-item>
       <md-list-item routerLink="/list">
         <md-icon md-list-icon>local_grocery_store</md-icon>
         <h4 md-line>Shopping List</h4>
-        <p md-line> Something about shopping list</p>
+        <p md-line>Buy the ingedients for the meals in your planner</p>
       </md-list-item>
-      <md-list-item routerLink="/account">
-        <md-icon md-list-icon>account_circle</md-icon>
-        <h4 md-line>Account</h4>
-        <p md-line> Something about account...</p>
+      <md-list-item routerLink="/settings">
+        <md-icon md-list-icon>settings</md-icon>
+        <h4 md-line>Settings</h4>
       </md-list-item>
     </md-list>
   </md-sidenav>
