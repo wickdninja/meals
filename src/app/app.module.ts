@@ -15,8 +15,10 @@ import {
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { routes } from './app.routes';
 import { IngredientListItemComponent } from './components/ingredient-list-item/ingredient-list-item.component';
 import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
 import { LoginComponent } from './components/login/login.component';
@@ -48,6 +50,7 @@ import { MockShoppingListStore } from './stores/mock-shopping-list.store';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forChild(routes),
     BrowserAnimationsModule,
     MdButtonModule,
     MdCardModule,

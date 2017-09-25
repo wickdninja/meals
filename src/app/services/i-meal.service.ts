@@ -4,6 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { Meal } from '../models/meal.model';
 
 @Injectable()
-export class IMealStore {
-  meals$: Observable<Array<Meal>>;
+export class IMealService {
+  meals$: Observable<Meal[]>;
 }
