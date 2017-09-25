@@ -15,42 +15,17 @@ import {
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
-import { IngredientListItemComponent } from './components/ingredient-list-item/ingredient-list-item.component';
-import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
-import { LoginComponent } from './components/login/login.component';
-import { MealListItemComponent } from './components/meal-list-item/meal-list-item.component';
-import { MealListComponent } from './components/meal-list/meal-list.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
-import { IIngredientStore } from './stores/i-ingredient-store';
-import { IMealStore } from './stores/i-meal-store';
-import { IShoppingListStore } from './stores/i-shopping-list.store';
-import { MockIngredientStore } from './stores/mock-ingredient-store';
-import { MockMealStore } from './stores/mock-meal.store';
-import { MockShoppingListStore } from './stores/mock-shopping-list.store';
+import { guards, routes } from './app.routes';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    MealListComponent,
-    MealListItemComponent,
-    NavigationComponent,
-    IngredientListComponent,
-    IngredientListItemComponent,
-    NotFoundComponent,
-    ShoppingListComponent,
-    ShoppingListItemComponent
-  ],
+  declarations: [AppComponent, LoginComponent, NotFoundComponent],
   imports: [
     BrowserModule,
-    RouterModule.forChild(routes),
+    routes,
     BrowserAnimationsModule,
     MdButtonModule,
     MdCardModule,
@@ -65,11 +40,7 @@ import { MockShoppingListStore } from './stores/mock-shopping-list.store';
     MatTooltipModule,
     MatTableModule
   ],
-  providers: [
-    { provide: IMealStore, useClass: MockMealStore },
-    { provide: IIngredientStore, useClass: MockIngredientStore },
-    { provide: IShoppingListStore, useClass: MockShoppingListStore }
-  ],
+  providers: [guards],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
