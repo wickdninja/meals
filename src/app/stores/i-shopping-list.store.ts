@@ -4,6 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { ShoppingList } from '../models/shopping-list.model';
 
 @Injectable()
-export class IMealStore {
-  public lists$: Observable<Array<ShoppingList>>;
+export class IShoppingListStore {
+  lists$: Observable<Array<ShoppingList>>;
 }
