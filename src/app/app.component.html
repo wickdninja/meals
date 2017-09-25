@@ -7,6 +7,10 @@
   <md-sidenav mode="side" opened="false" #sidenav>
     <md-list (click)="sidenav.toggle()">
       <h3 md-subheader>Meals</h3>
+      <md-list-item routerLink="/planner">
+        <md-icon md-list-icon>event</md-icon>
+        <h4 md-line>Planner</h4>
+      </md-list-item>
       <md-list-item routerLink="/meals">
         <md-icon md-list-icon>restaurant</md-icon>
         <h4 md-line>Meals</h4>

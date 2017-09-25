@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     MatAutocompleteModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -33,6 +34,7 @@ import { MealListItemComponent } from './meal-list-item/meal-list-item.component
 import { MealListComponent } from './meal-list/meal-list.component';
 import { MealComponent } from './meal/meal.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { PlannerComponent } from './planner/planner.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -41,6 +43,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatListModule,
     MdButtonModule,
@@ -56,6 +59,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     MatTooltipModule,
     MatTableModule,
     MatSidenavModule,
+    MatGridListModule,
     mainRoutes
   ],
   providers: [
@@ -72,7 +76,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     IngredientListComponent,
     IngredientListItemComponent,
     ShoppingListComponent,
-    ShoppingListItemComponent
+    ShoppingListItemComponent,
+    PlannerComponent
   ],
   exports: [
     RouterModule,
@@ -84,7 +89,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     IngredientListComponent,
     IngredientListItemComponent,
     ShoppingListComponent,
-    ShoppingListItemComponent
+    ShoppingListItemComponent,
+    PlannerComponent
   ]
 })
 export class MainModule {}
