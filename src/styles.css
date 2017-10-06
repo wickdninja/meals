@@ -7,3 +7,7 @@ app-root {
 body {
   background: #673ab7;
 }
+.paper-header > div.mat-card-header-text {
+  display: flex !important;
+  flex: 1 !important;
+}
