@@ -1,4 +1,4 @@
-<form class="example-form" fxLayout="row" fxFlexFill>
+<!-- <form class="example-form" fxLayout="row" fxFlexFill>
   <md-form-field class="example-full-width" fxLayout="row" fxFlexFill>
     <input mdInput placeholder="Search" aria-label="Search" [mdAutocomplete]="auto" [formControl]="foodCtrl" fxFlexFill>
     <md-autocomplete #auto="mdAutocomplete" fxLayout="row" fxFlexFill>
@@ -9,17 +9,20 @@
       </md-option>
     </md-autocomplete>
   </md-form-field>
-</form>
+</form> -->
+<md-card *ngFor="let day of days" class="paper">
+  <span></span>
 
-<md-list>
-  <span *ngFor="let day of days">
-      <h3 mdSubheader>{{day.name}} - {{day.date}}</h3>
-      <md-list-item>
-        <md-icon mdListIcon>restaurant</md-icon>
-        <ul>
-          <li mdLine *ngFor="let meal of day.meals">{{meal}}</li>
-        </ul>
-      </md-list-item>
-      <md-divider></md-divider>
-  </span>
-</md-list>
+  <md-card-header class="paper-header">
+    <md-card-title>
+      <span>{{day.name}}</span>
+      <span class="spacer"></span>
+      <span>{{day.date}}</span>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <ul>
+      <li mdLine *ngFor="let meal of day.meals">{{meal}}</li>
+    </ul>
+  </md-card-content>
+</md-card>

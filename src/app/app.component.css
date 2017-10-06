@@ -1,3 +1,9 @@
 #main-container {
   min-height: calc(100vh - 56px);
+  top: 60px;
+  background: #9f80d7;
+}
+.header-toolbar {
+  position: fixed;
+  z-index: 2;
 }
