@@ -1,3 +1,25 @@
-<p>
-  planner works!
-</p>
+<form class="example-form" fxLayout="row" fxFlexFill>
+  <md-form-field class="example-full-width" fxLayout="row" fxFlexFill>
+    <input mdInput placeholder="Search" aria-label="Search" [mdAutocomplete]="auto" [formControl]="foodCtrl" fxFlexFill>
+    <md-autocomplete #auto="mdAutocomplete" fxLayout="row" fxFlexFill>
+      <md-option *ngFor="let food of filteredFoods | async" [value]="food.name">
+        <img style="vertical-align:middle;" aria-hidden src="{{food.img}}" height="25" />
+        <span>{{ food.name }}</span> |
+        <small>${{food.cost}}</small>
+      </md-option>
+    </md-autocomplete>
+  </md-form-field>
+</form>
+
+<md-list>
+  <span *ngFor="let day of days">
+      <h3 mdSubheader>{{day.name}} - {{day.date}}</h3>
+      <md-list-item>
+        <md-icon mdListIcon>restaurant</md-icon>
+        <ul>
+          <li mdLine *ngFor="let meal of day.meals">{{meal}}</li>
+        </ul>
+      </md-list-item>
+      <md-divider></md-divider>
+  </span>
+</md-list>
