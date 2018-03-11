@@ -17,14 +17,14 @@ export class MealStore implements IMealStore {
     this.save();
   }
 
+  private save() {
+    window.localStorage.setItem(key, JSON.stringify(this._meals));
+  }
+
   load() {
     const tmp = window.localStorage.getItem(key);
     this._meals = tmp ? (JSON.parse(tmp) as Meal[]) : new Array<Meal>();
     this.publish();
-  }
-
-  save() {
-    window.localStorage.setItem(key, JSON.stringify(this._meals));
   }
 
   add(meal: Meal) {

@@ -5,7 +5,7 @@ export class Ingredient {
   name: string;
   quantity: number;
   unit: string;
-  constructor(uuid: UUID) {
+  constructor() {
     this.id = UUID.create();
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IMealStore } from '../../stores/i-meal.store';
+import { Meal } from '../../models/meal.model';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-meal-list',
@@ -6,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal-list.component.css']
 })
 export class MealListComponent implements OnInit {
-  tiles = [
-    { text: 'One', color: 'lightblue' },
-    { text: 'Two', color: 'lightgreen' },
-    { text: 'Three', color: 'lightpink' },
-    { text: 'Four', color: '#DDBDF1' },
-    { text: 'Five', color: 'lightblue' },
-    { text: 'Six', color: 'lightgreen' },
-    { text: 'Seven', color: 'lightpink' },
-    { text: 'Eight', color: '#DDBDF1' }
-  ];
-  ngOnInit() {}
+  meals: Observable<Meal[]>;
+  constructor(private mealStore: IMealStore) {
+    this.meals = this.mealStore.meals;
+  }
+  ngOnInit() {
+    console.log('meal list on init');
+  }
 }

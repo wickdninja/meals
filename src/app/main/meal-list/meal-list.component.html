@@ -1,5 +1,7 @@
 <md-grid-list cols="2" rowHeight="2:1">
-  <md-grid-tile *ngFor="let tile of tiles" [style.background]="tile.color">
-    {{tile.text}}
+  <md-grid-tile *ngFor="let meal of meals | async">
+    {{meal.name}}
+    <br/>
+    <small>{{meal.id}}</small>
   </md-grid-tile>
 </md-grid-list>
