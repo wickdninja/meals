@@ -2,31 +2,25 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    MatAutocompleteModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MdButtonModule,
-    MdCardModule,
-    MdTabsModule,
+  MatAutocompleteModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MdButtonModule,
+  MdCardModule,
+  MdTabsModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
-import { IIngredientService } from '../services/i-ingredient.service';
-import { IMealService } from '../services/i-meal.service';
-import { IShoppingListService } from '../services/i-shopping-list.service';
-import { IngredientService } from '../services/ingredient.service';
-import { MealService } from '../services/meal.service';
-import { ShoppingListService } from '../services/shopping-list.service';
 import { IngredientListItemComponent } from './ingredient-list-item/ingredient-list-item.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { mainRoutes } from './main.routes';
@@ -61,11 +55,6 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     MatSidenavModule,
     MatGridListModule,
     mainRoutes
-  ],
-  providers: [
-    { provide: IMealService, useClass: MealService },
-    { provide: IIngredientService, useClass: IngredientService },
-    { provide: IShoppingListService, useClass: ShoppingListService }
   ],
   declarations: [
     SettingsComponent,

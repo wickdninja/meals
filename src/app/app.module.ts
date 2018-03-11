@@ -2,21 +2,21 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
-    MatAutocompleteModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MdButtonModule,
-    MdCardModule,
-    MdTabsModule,
+  MatAutocompleteModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MdButtonModule,
+  MdCardModule,
+  MdTabsModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +26,8 @@ import { guards, routes } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { MainModule } from './main/main.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { stores } from './stores';
+import { services } from './services';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],
@@ -52,7 +54,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MainModule,
     routes
   ],
-  providers: [guards],
+  providers: [guards, stores, services],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
